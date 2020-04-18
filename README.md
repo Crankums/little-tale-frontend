@@ -1,3 +1,11 @@
+This is my final React/Redux project for Flatiron School! 
+
+This app will create a prompt for a user to tell a little tale. The user will be given three words and a location. They'll write a short bit of text using these words and then other users will be able to continue the thread by way of comments. The user is free to delete their stories if there are any problems with it, but they can't edit them once they've been set in motion; otherwise, the rest of the thread will make no sense! Other users will be able to contribute, as well as upvote or downvote individual story pieces.
+
+There's not much to it! Let's see how it goes!
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
