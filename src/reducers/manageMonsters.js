@@ -3,7 +3,7 @@ function monstersReducer(state = {
     requesting: false }, action) {
         switch (action.type) {
 
-            case 'START_ADDING_MONSTERS_REQUEST':
+            case 'REQUESTING_MONSTERS':
                 return {
                     ...state,
                     monsters: [...state.monsters],
