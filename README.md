@@ -4,6 +4,7 @@ This app will create a prompt for a user to tell a little tale. The user will be
 
 There's not much to it! Let's see how it goes!
 
+link to project Rails API repo: https://github.com/Crankums/little-tale-api
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
