@@ -1,3 +1,5 @@
+import manageEquipment from './manageEquipment'
+import manageMonsters from './manageMonsters'
 
 
 export const rootReducer = combineReducers({
