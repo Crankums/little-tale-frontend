@@ -1,4 +1,4 @@
-import { fetchEquipment } from '../actions/equipmentActions'
+// import { fetchEquipment } from '../actions/equipmentActions'
 
 export default function manageEquipment(state = { 
     equipment: [],

@@ -1,4 +1,4 @@
-import { fetchPersons } from '../actions/personActions'
+// import { fetchPersons } from '../actions/personActions'
 
 export default function personsReducer(state = { 
     persons: [],

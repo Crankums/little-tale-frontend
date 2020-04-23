@@ -6,11 +6,11 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races'
 
 export const fetchPersons = () => {
     return (dispatch) => {
-        dispatch({ type: "REQUESTING_RACES"})
+        dispatch({ type: "REQUESTING_PERSONS"})
         fetch(BASE_URL)
             .then(res => res.json())
             .then(resJSON => {
-                dispatch({ type: 'ADD_RACES', persons: resJSON.results})
+                dispatch({ type: 'ADD_PERSONS', persons: resJSON.results})
         })
     }
 }
