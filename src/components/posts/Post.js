@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Post extends Component{
 
@@ -6,6 +7,7 @@ class Post extends Component{
         return(
             <div>
                 This is A post
+                <CommentsContainer />
             </div>
         )
     }
