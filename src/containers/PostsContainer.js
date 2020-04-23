@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import PostInput from "../components/posts/PostInput";
+import Posts from "../components/posts/Posts";
+// import PostInput from "../components/posts/PostInput";
+
 
 export class PostsContainer extends Component{
 
@@ -8,7 +10,7 @@ export class PostsContainer extends Component{
             <div>
                 Posts Container!
                 <br></br><br></br>
-                <PostInput />
+                <Posts />
             </div>
         )
     }
