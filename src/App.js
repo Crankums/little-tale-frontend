@@ -5,6 +5,7 @@ import Prompt from './components/Prompt';
 import { fetchMonsters } from './actions/monsterActions'
 import {fetchPersons} from './actions/personActions'
 import { fetchEquipment } from './actions/equipmentActions'
+import PostsContainer from './containers/PostsContainer';
 
 class App extends Component {
 
@@ -22,8 +23,9 @@ class App extends Component {
           Login <br></br><br></br>
           If logged in: Prompts Container<br></br><br></br>
           <Prompt />
-          Posts Container<br></br>
-        </header>
+          <br></br>
+          <PostsContainer />
+          </header>
       </div>
     );
   }
