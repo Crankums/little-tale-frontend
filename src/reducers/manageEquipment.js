@@ -1,4 +1,4 @@
-export function manageEquipment(state = { 
+export default function manageEquipment(state = { 
     equipment: [],
     requesting: false }, action) {
         switch (action.type) {

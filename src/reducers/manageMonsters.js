@@ -1,4 +1,4 @@
-export function monstersReducer(state = { 
+export default function monstersReducer(state = { 
     monsters: [],
     requesting: false }, action) {
         switch (action.type) {

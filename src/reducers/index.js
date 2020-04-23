@@ -1,3 +1,4 @@
+import { combineReducers } from "redux";
 import manageEquipment from './manageEquipment'
 import manageMonsters from './manageMonsters'
 import managePersons from './managePersons'
@@ -7,3 +8,5 @@ export const rootReducer = combineReducers({
     equipment: manageEquipment,
     persons: managePersons
 })
+
+export default rootReducer

@@ -1,4 +1,4 @@
-export function personsReducer(state = { 
+export default function personsReducer(state = { 
     persons: [],
     requesting: false }, action) {
         switch (action.type) {
