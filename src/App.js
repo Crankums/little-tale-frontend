@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
+import { Prompt } from './components/Prompt';
 
 class App extends Component {
   
@@ -11,6 +12,7 @@ class App extends Component {
           NavBar <br></br><br></br>
           Login <br></br><br></br>
           If logged in: Prompts Container<br></br><br></br>
+          <Prompt />
           Posts Container<br></br>
         </header>
       </div>

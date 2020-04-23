@@ -15,6 +15,22 @@ export const fetchMonsters = () => {
     }
 }
 
+/*function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1)); 
+
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+fetch('https://www.dnd5eapi.co/api/monsters')
+.then(res => res.json())
+.then(jsonObj => jsonObj.results.map(el => el.name))
+.then(name => monsArr.push(name))
+
+shuffle(monsArr[0])
+*/
+
 /* herein lies the challenge. Do I:
     1. Fetch the entire results array, picking a random index from within?
         -iterate or shuffle the results, then pick a name off the top (calling this raffle style)  
