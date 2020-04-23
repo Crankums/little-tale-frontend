@@ -4,7 +4,7 @@ const BASE_URL = 'https://www.dnd5eapi.co/api/races'
 //     .then(res => res.json)
 //     .then(resJSON => console.log(resJSON.results))
 
-export const fetchEquipment = () => {
+export const fetchPersons = () => {
     return (dispatch) => {
         dispatch({ type: "REQUESTING_RACES"})
         fetch(BASE_URL)

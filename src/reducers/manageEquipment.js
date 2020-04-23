@@ -1,3 +1,5 @@
+import { fetchEquipment } from '../actions/equipmentActions'
+
 export default function manageEquipment(state = { 
     equipment: [],
     requesting: false }, action) {

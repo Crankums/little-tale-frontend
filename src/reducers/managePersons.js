@@ -1,3 +1,5 @@
+import { fetchPersons } from '../actions/personActions'
+
 export default function personsReducer(state = { 
     persons: [],
     requesting: false }, action) {
