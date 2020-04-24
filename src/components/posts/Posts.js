@@ -7,10 +7,13 @@ export class Posts extends Component{
         return(
             <div>
                 This is where the posts will go
-                <Post />
+                <Post 
+                deletePost={this.props.deletePost}/>
             </div>
         )
     }
 }
+
+
 
 export default Posts

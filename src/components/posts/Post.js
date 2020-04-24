@@ -7,7 +7,7 @@ class Post extends Component{
         return(
             <div>
                 This is A post
-                <CommentsContainer />
+                <CommentsContainer postId={this.props.postId}/>
             </div>
         )
     }
