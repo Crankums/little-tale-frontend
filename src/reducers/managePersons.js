@@ -2,6 +2,7 @@
 
 export default function personsReducer(state = { 
     persons: [],
+    index: 0,
     requesting: false }, action) {
         switch (action.type) {
 

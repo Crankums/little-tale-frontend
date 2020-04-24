@@ -2,6 +2,7 @@
 
 export default function manageEquipment(state = { 
     equipment: [],
+    index: 0,
     requesting: false }, action) {
         switch (action.type) {
 
