@@ -39,7 +39,9 @@ const mapStateToProps = state => {
     return { 
         persons: state.persons,
         monsters: state.monsters,
-        equipment: state.equipment}
+        equipment: state.equipment,
+        loading: state.loading
+    }
 }
 
 // const mapDispatchToProps = dispatch => {
