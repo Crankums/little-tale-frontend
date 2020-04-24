@@ -9,6 +9,7 @@ export default function monstersReducer(state = {
             case 'REQUESTING_MONSTERS':
                 return {
                     ...state,
+                    monsters: [...state.monsters],
                     requesting: true
                 }
             
