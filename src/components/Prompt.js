@@ -3,6 +3,7 @@ import React, { Component } from "react";
 // import { fetchPersons } from "../actions/personActions";
 // import { fetchEquipment } from "../actions/equipmentActions";
 import { connect } from 'react-redux'
+import PostInput from "./posts/PostInput";
 
 export class Prompt extends Component{
 
@@ -26,7 +27,7 @@ export class Prompt extends Component{
         return(
             <div>
                 <button>Prompt!</button>
-
+            <PostInput />
             <div>{this.state.words}</div>
             </div>
         )

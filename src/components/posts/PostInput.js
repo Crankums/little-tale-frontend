@@ -6,9 +6,8 @@ export class PostInput extends Component{
         return(
             <div>
                 <form>
-                Inputs go here!
-                <input type='text'></input>
-                <input type='submit'></input>
+                <textarea></textarea>
+                <input type='submit' placeholder="inputs go here"></input>
                 </form>
             </div>
         )

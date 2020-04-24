@@ -6,7 +6,7 @@ export class Posts extends Component{
     render(){
         return(
             <div>
-                These are where the posts will go
+                This is where the posts will go
                 <Post />
             </div>
         )
