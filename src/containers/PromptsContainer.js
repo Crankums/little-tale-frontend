@@ -26,7 +26,7 @@ export class PromptsContainer extends Component{
         // const monsters = this.props.monsters.map(mons => <li key={mons.id}>{mons.name}</li>)
         return(
             <div className='prompts-container'> 
-                <div>{this.state.keywords.map(el => `"${el}" `)}</div>
+                <div className='keywords'>{this.state.keywords.map(el => `"${el}" `)}</div>
                     <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
                 <PostInput addPost={this.props.addPost}/>
            

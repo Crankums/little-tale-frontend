@@ -11,7 +11,7 @@ export class Posts extends Component{
         const postsList = posts.map(post => <Post post={post} deletePost={this.props.deletePost}/>)
         
         return(
-            <ul>
+            <ul id='post-list'>
                 {postsList}
             </ul>
         )

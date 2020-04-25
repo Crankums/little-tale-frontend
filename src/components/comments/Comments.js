@@ -5,7 +5,7 @@ class Comments extends Component{
 
     render(){
         return(
-            <div>
+            <div className='comments'>
                 This is where the comments will go
                 <Comment />
             </div>

@@ -5,7 +5,7 @@ class CommentsContainer extends Component{
 
     render(){
         return(
-            <div>
+            <div className='comments-container'>
                 Comments container!
                 <Comments />
             </div>

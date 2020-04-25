@@ -10,14 +10,11 @@ class Post extends Component{
     render(){
         const { post } = this.props
         return(
-            <div>
-                <li>
+                <li className='post'>
                     {post.text}
-                    <button onClick={()=>this.handleOnClick()}>Delete Post!</button>
+                    <button id='delete-button' onClick={()=>this.handleOnClick()}>Delete Post!</button>
                     <CommentsContainer post={post}/>
                 </li>
-                
-            </div>
         )
     }
 }

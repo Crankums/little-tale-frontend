@@ -22,8 +22,8 @@ export class PostInput extends Component{
 
     render(){
         return(
-            <div>
-                <form onSubmit = {(event) => this.handleOnSubmit(event)}>
+            <div className='post-input'>
+                <form id='post-input' onSubmit = {(event) => this.handleOnSubmit(event)}>
                     <br></br>
                     <textarea  placeholder="inputs go here"
                     value = {this.state.text}
