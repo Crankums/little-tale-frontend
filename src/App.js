@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import Prompt from './components/Prompt';
+import PromptsContainer from './containers/PromptsContainer';
 import { fetchMonsters } from './actions/monsterActions'
 import { fetchPersons } from './actions/personActions'
 import { fetchEquipment } from './actions/equipmentActions'
@@ -22,7 +22,7 @@ class App extends Component {
           NavBar <br></br><br></br>
           Login <br></br><br></br>
           If logged in: Prompts Container<br></br><br></br>
-          <Prompt />
+          <PromptsContainer />
           <br></br>
           <PostsContainer />
           </header>
