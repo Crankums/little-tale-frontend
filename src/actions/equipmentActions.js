@@ -10,7 +10,16 @@ export const fetchEquipment = () => {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(resJSON => {
+                shuffle(resJSON.results)
                 dispatch({ type: 'ADD_EQUIPMENT', equipment: resJSON.results})
         })
     }
 }
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); 
+  
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }

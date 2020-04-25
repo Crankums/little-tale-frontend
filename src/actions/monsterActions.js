@@ -10,12 +10,13 @@ export const fetchMonsters = () => {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(resJSON => {
+                shuffle(resJSON.results)
                 dispatch({ type: 'ADD_MONSTERS', monsters: resJSON.results})
         })
     }
 }
 
-/*function shuffle(array) {
+function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); 
 
@@ -23,7 +24,7 @@ export const fetchMonsters = () => {
   }
 }
 
-fetch('https://www.dnd5eapi.co/api/monsters')
+/*fetch('https://www.dnd5eapi.co/api/monsters')
 .then(res => res.json())
 .then(jsonObj => jsonObj.results.map(el => el.name))
 .then(name => monsArr.push(name))
