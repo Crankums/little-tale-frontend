@@ -21,7 +21,6 @@ export class PostInput extends Component{
     }
 
     render(){
-        console.log(this.props)
         return(
             <div>
                 <form onSubmit = {(event) => this.handleOnSubmit(event)}>
