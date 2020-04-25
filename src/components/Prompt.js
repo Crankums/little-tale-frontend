@@ -15,7 +15,6 @@ export class Prompt extends Component{
             this.props.equipment.equipment[this.props.equipment.index].name,
             this.props.monsters.monsters[this.props.monsters.index].name]
             increaseIndex(this.props)
-            console.log(this.props.persons.persons)
         this.setState(
             {keywords: arr}
         )
