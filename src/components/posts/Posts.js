@@ -2,21 +2,17 @@ import React, { Component } from "react";
 import Post from "./Post";
 
 export class Posts extends Component{
+    
 
     render(){
-        const { posts, deletePost } = this.props
-        const postList = posts.map(post => {
-            return(
-                <Post
-                    key={post.id}
-                    post={post}
-                    deletePost={deletePost}
-                />
-            )
-        })
+        
+        const posts = this.props.posts.posts
+        console.log(this.props)
+        const postsList = posts.map(post => <Post post={post} deletePost={this.props.deletePost}/>)
+        
         return(
             <ul>
-                {postList}
+                {postsList}
             </ul>
         )
     }

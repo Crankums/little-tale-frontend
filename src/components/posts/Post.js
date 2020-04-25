@@ -3,11 +3,20 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Post extends Component{
 
+    handleOnClick(){
+        this.props.deletePost(this.props.post.id)
+    }
+
     render(){
+        const { post } = this.props
         return(
             <div>
-                This is A post
-                <CommentsContainer postId={this.props.postId}/>
+                <li>
+                    {post.text}
+                    <button onClick={()=>this.handleOnClick()}>Delete Post!</button>
+                    <CommentsContainer post={post}/>
+                </li>
+                
             </div>
         )
     }

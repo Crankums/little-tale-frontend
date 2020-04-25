@@ -25,9 +25,9 @@ export class PromptsContainer extends Component{
     render(){
         // const monsters = this.props.monsters.map(mons => <li key={mons.id}>{mons.name}</li>)
         return(
-            <div> 
+            <div className='prompts-container'> 
                 <div>{this.state.keywords.map(el => `"${el}" `)}</div>
-                    <button onClick={this.handleClick}>Prompt!</button>
+                    <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
                 <PostInput addPost={this.props.addPost}/>
            
             </div>
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addPost: text => dispatch({type: 'ADD_TYPE', text})
+    addPost: text => dispatch({type: 'ADD_POST', text})
 })
 
 

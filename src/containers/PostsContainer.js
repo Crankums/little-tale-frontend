@@ -8,19 +8,22 @@ export class PostsContainer extends Component{
 
     render(){
         return(
-            <div>
+            <div className = 'posts-container'>
                 Posts Container!
                 <br></br><br></br>
                 <Posts 
                 posts={this.props.posts}
                 deletePost={this.props.deletePost}/>
+                
             </div>
+            
         )
+        
     }
+    
 }
 
-const mapStateToProps = state =>
-({ posts: state.posts})
+const mapStateToProps = state => ({ posts: state.posts })
 
 const mapDispatchToProps = dispatch => ({
     deletePost: id => dispatch({type: 'DELETE_POST', id})
