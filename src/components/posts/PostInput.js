@@ -14,12 +14,14 @@ export class PostInput extends Component{
 
     handleOnSubmit(event) {
         event.preventDefault()
+        this.props.addPost(this.state.text)
         this.setState({
             text: ''
         })
     }
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 <form onSubmit = {(event) => this.handleOnSubmit(event)}>
