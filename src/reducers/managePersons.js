@@ -27,12 +27,7 @@ export default function personsReducer(state = {
                     ...state,
                      index: state.index <= state.index.length ? state.index +=1 : state.index = 0
                 }
-            case 'GET_PROMPT':
-                debugger
-                let person = state.persons.persons[state.index]
-                return {
-                    person
-                }
+            
             
             default:
                 return state
