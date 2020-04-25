@@ -1,5 +1,7 @@
 // import { fetchPersons } from '../actions/personActions'
 
+
+
 export default function personsReducer(state = { 
     persons: [],
     index: 0,
@@ -20,6 +22,17 @@ export default function personsReducer(state = {
                     requesting: false
                 }
             
+            case 'INCREASE_INDEX':
+                return {
+                    ...state,
+                     index: state.index <= state.index.length ? state.index +=1 : state.index = 0
+                }
+            case 'GET_PROMPT':
+                debugger
+                let person = state.persons.persons[state.index]
+                return {
+                    person
+                }
             
             default:
                 return state

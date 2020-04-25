@@ -10,7 +10,7 @@ export const fetchPersons = () => {
         fetch(BASE_URL)
             .then(res => res.json())
             .then(resJSON => {
-                dispatch({ type: 'ADD_PERSONS', persons: resJSON.results})
+                dispatch({ type: 'ADD_PERSONS', persons: resJSON.results.flat()})
         })
     }
 }

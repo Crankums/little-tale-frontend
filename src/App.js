@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import Prompt from './components/Prompt';
 import { fetchMonsters } from './actions/monsterActions'
-import {fetchPersons} from './actions/personActions'
+import { fetchPersons } from './actions/personActions'
 import { fetchEquipment } from './actions/equipmentActions'
 import PostsContainer from './containers/PostsContainer';
 
