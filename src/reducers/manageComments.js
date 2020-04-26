@@ -1,4 +1,4 @@
-export function manageComments(state = {
+export default function manageComments(state = {
     comments: []
 }, action){
      switch (action.type) {
