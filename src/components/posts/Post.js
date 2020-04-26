@@ -13,7 +13,7 @@ class Post extends Component{
                 <li className='post'>
                     {post.text}
                     <button id='delete-button' onClick={()=>this.handleOnClick()}>Delete Post!</button>
-                    <CommentsContainer post={post}/>
+                    <CommentsContainer />
                 </li>
         )
     }

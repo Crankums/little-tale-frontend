@@ -3,12 +3,14 @@ import manageEquipment from './manageEquipment'
 import manageMonsters from './manageMonsters'
 import managePersons from './managePersons'
 import managePosts from "./managePosts";
+import { manageComments } from "./manageComments";
 
 export const rootReducer = combineReducers({
     monsters: manageMonsters,
     equipment: manageEquipment,
     persons: managePersons,
-    posts: managePosts
+    posts: managePosts,
+    comments: manageComments
 })
 
 export default rootReducer
