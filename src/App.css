@@ -38,5 +38,6 @@
 }
 
 .posts-container{
-  border: 1px;
+  border-style: solid;
+  border-width: .1px;
 }
