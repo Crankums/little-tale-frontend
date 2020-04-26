@@ -5,6 +5,8 @@ import managePersons from './managePersons'
 import managePosts from "./managePosts";
 import manageComments from "./manageComments";
 import manageUsers from "./manageUsers";
+import currentUser from "./currentUser";
+import manageLoginForm from './manageLoginForm'
 
 export const rootReducer = combineReducers({
     monsters: manageMonsters,
@@ -12,7 +14,10 @@ export const rootReducer = combineReducers({
     persons: managePersons,
     posts: managePosts,
     comments: manageComments,
-    users: manageUsers
+    users: manageUsers,
+    currentUser,
+    manageLoginForm
+
 })
 
 export default rootReducer
