@@ -11,3 +11,10 @@ React to Post
 Admin:
 Update posts
 Lock replies*/
+
+export const addPost = post => {
+    return {
+        type: 'ADD_POST',
+        post
+    }
+}
