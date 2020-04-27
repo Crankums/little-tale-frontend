@@ -3,7 +3,7 @@ import { updateLoginForm } from '../actions/LoginFormActions'
 import React from 'react'
 import {login} from "../actions/currentUserActions.js"
 
-const Login = ({ loginFormData, updateLoginForm}) => {
+const Login = ({ loginFormData, updateLoginForm, login}) => {
 
     const handleInputChange = event => {
         const {name, value }= event.target
@@ -32,13 +32,9 @@ const Login = ({ loginFormData, updateLoginForm}) => {
 const mapStateToProps = state => {
     return {
         loginFormData: state.manageLoginForm
-        // username: state.manageLoginForm.username,
-        // password: state.manageLoginForm.password
+        
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-    
-// }
 
 export default connect(mapStateToProps, { updateLoginForm, login })(Login)
