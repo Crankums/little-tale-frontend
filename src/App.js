@@ -6,6 +6,7 @@ import { fetchMonsters } from './actions/monsterActions'
 import { fetchPersons } from './actions/personActions'
 import { fetchEquipment } from './actions/equipmentActions'
 import PostsContainer from './containers/PostsContainer';
+import Login from './components/Login'
 
 class App extends Component {
 
@@ -17,15 +18,14 @@ class App extends Component {
   
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
+      <div >
+          <Login />
           NavBar <br></br><br></br>
           Login <br></br><br></br>
           If logged in: Prompts Container<br></br><br></br>
           <PromptsContainer />
           <br></br>
           <PostsContainer />
-          </header>
       </div>
     );
   }
