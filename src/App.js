@@ -20,8 +20,6 @@ class App extends Component {
     return (
       <div >
           <Login />
-          NavBar <br></br><br></br>
-          Login <br></br><br></br>
           If logged in: Prompts Container<br></br><br></br>
           <PromptsContainer />
           <br></br>
