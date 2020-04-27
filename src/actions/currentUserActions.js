@@ -45,6 +45,7 @@ export const getCurrentUser = credentials => {
                     alert(user.error)
                 } else {
                     dispatch(setCurrenUser(user))
+                    console.log(`${user.data.attributes.username} is currently logged in`)
                 }
             })
             .catch(console.log)
