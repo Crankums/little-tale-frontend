@@ -7,6 +7,7 @@ import { fetchPersons } from './actions/personActions'
 import { fetchEquipment } from './actions/equipmentActions'
 import PostsContainer from './containers/PostsContainer';
 import Login from './components/Login'
+import { getCurrentUser } from './actions/currentUserActions';
 
 class App extends Component {
 
@@ -14,6 +15,8 @@ class App extends Component {
     this.props.fetchMonsters()
     this.props.fetchPersons()
     this.props.fetchEquipment()
+    this.props.getCurrentUser()
+    
   }
   
   render(){
@@ -38,4 +41,4 @@ const mapDispatchToProps = state => {
   }
 }
 
-export default connect(mapDispatchToProps, { fetchMonsters, fetchPersons, fetchEquipment })(App);
+export default connect(mapDispatchToProps, { fetchMonsters, fetchPersons, fetchEquipment, getCurrentUser})(App);
