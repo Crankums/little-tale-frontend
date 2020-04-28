@@ -2,8 +2,18 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import PostInput from '../components/posts/PostInput';
 import { increaseIndex } from '../actions/promptActions'
-
+import { fetchMonsters } from '../actions/monsterActions'
+import { fetchPersons } from '../actions/personActions'
+import { fetchEquipment } from '../actions/equipmentActions'
 export class PromptsContainer extends Component{
+    
+    componentDidMount(){
+        this.props.fetchMonsters()
+        this.props.fetchPersons()
+        this.props.fetchEquipment()
+        // this.props.getCurrentUser()
+        
+      }
 
     state={
         keywords: []
@@ -18,6 +28,7 @@ export class PromptsContainer extends Component{
         this.setState(
             {keywords: arr}
         )
+
     }
 
     render(){
@@ -39,16 +50,19 @@ export class PromptsContainer extends Component{
 }
 
 
+
 const mapStateToProps = state => {
     
     return { 
         persons: state.persons,
         monsters: state.monsters,
         equipment: state.equipment,
-        loading: state.loading
+        loading: state.loading,
+        keywords: state.keywords,
+        
     }
     
 }
 
 
-export default connect(mapStateToProps)(PromptsContainer)
+export default connect(mapStateToProps, { fetchMonsters, fetchPersons, fetchEquipment })(PromptsContainer)
