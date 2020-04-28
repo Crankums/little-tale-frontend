@@ -14,9 +14,7 @@ class App extends Component {
 
   
   componentDidMount(){
-
     this.props.getCurrentUser()
-    
   }
   
   render(){
