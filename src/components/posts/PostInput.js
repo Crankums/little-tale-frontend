@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 export class PostInput extends Component{
 
+
     state = {
         text: '',
         title: ''
@@ -28,12 +29,16 @@ export class PostInput extends Component{
         })
     }
 
+
+
     render(){
+        console.log(this)
         return(
             <div className='post-input'>
                 <form id='post-input' onSubmit={this.handleOnSubmit}>
                     <br></br>
                     <textarea placeholder="inputs go here"
+                    name = 'text'
                     value = {this.state.text}
                     onChange={this.handleOnChange}
                     style={{
