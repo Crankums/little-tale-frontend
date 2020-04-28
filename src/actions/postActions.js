@@ -19,6 +19,13 @@ export const addPost = post => {
     }
 }
 
+export const setAllPosts = posts => {
+    return {
+        type: "SET_ALL_POSTS",
+        posts
+    }
+} 
+
 export const createPost = postData => {
     return dispatch => {
         const sendablePostData = {
@@ -32,7 +39,36 @@ export const createPost = postData => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(sendablePostData)
+        })
+        .then(res=>res.json())
+        .then(res => {
+            if (res.error) {
+                alert(res.error)
+            } else {
+                dispatch(addPost(res.data))
             }
-        )
+        })
+        .catch(console.log)
+    }
+}
+
+export const getPosts = () => {
+    return dispatch => {
+        return fetch('http://localhost:3001/api/v1/posts', {
+            credentials: 'include',
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res=>res.json())
+        .then(res => {
+            if (res.error) {
+                alert(res.error)
+            } else {
+                dispatch(setAllPosts(res.data))
+            }
+        })
+        .catch(console.log)
     }
 }
