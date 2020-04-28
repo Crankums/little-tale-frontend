@@ -14,14 +14,15 @@ Lock replies*/
 
 
 
-export const addPost = post => {
+export const addPosts = posts => {
     return {
         type: 'ADD_POST',
-        post
+        posts
     }
 }
 
 export const setAllPosts = posts => {
+    debugger
     return {
         type: "SET_ALL_POSTS",
         posts
@@ -49,15 +50,17 @@ export const createPost = (postData, user) => {
             if (res.error) {
                 alert(res.error)
             } else {
-                dispatch(addPost(res.data))
+                dispatch(addPosts(res.data))
             }
         })
         .catch(console.log)
     }
 }
 
-export const getPosts = () => {
+export const fetchPosts = () => {
+
     return dispatch => {
+        dispatch({ type: "REQUESTING_POSTS"})
         return fetch('http://localhost:3001/api/v1/posts', {
             credentials: 'include',
             method: "GET",
@@ -70,7 +73,7 @@ export const getPosts = () => {
             if (res.error) {
                 alert(res.error)
             } else {
-                dispatch(setAllPosts(res.data))
+                dispatch({ type: 'ADD_POSTS', posts: res})
             }
         })
         .catch(console.log)
