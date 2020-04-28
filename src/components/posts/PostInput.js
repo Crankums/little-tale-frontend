@@ -24,13 +24,14 @@ export class PostInput extends Component{
             title: this.props.keywords.join(', ')
         }
         this.props.createPost(post, this.props.user)
+        
         this.setState({
             text: '',
             title: ''
         })
     }
 
-
+    
 
     render(){
         return(
@@ -51,6 +52,7 @@ export class PostInput extends Component{
         )
     }
 }
+
 
 const mapStateToProps= state => {
     return {

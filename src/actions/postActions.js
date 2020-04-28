@@ -21,13 +21,12 @@ export const addPosts = posts => {
     }
 }
 
-export const setAllPosts = posts => {
-    debugger
-    return {
-        type: "SET_ALL_POSTS",
-        posts
-    }
-} 
+// export const setAllPosts = () => {
+    
+//     return {
+//         type: "SET_ALL_POSTS"
+//     }
+// } 
 
 export const createPost = (postData, user) => {
     
@@ -51,8 +50,11 @@ export const createPost = (postData, user) => {
                 alert(res.error)
             } else {
                 dispatch(addPosts(res.data))
+
             }
+        
         })
+        .then(()=>fetchPosts())
         .catch(console.log)
     }
 }

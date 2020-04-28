@@ -4,9 +4,8 @@ import Post from "./Post";
 export class Posts extends Component{
     
 
+
     render(){
-        console.log(this.props.posts)
-        // const posts = this.props.posts.posts
         const postsList = this.props.posts.map(post => <Post key={post.id} post={post} deletePost={this.props.deletePost}/>)
         
         return(
@@ -16,7 +15,6 @@ export class Posts extends Component{
         )
     }
 }
-
 
 
 export default Posts

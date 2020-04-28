@@ -11,6 +11,7 @@ class Post extends Component{
         const { post } = this.props
         return(
                 <li className='post'>
+                    <p>{post.title}</p>
                     {post.text}
                     <button id='delete-button' onClick={()=>this.handleOnClick()}>Delete Post!</button>
                     <CommentsContainer post={post}/>
