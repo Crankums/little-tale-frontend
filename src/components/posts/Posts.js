@@ -6,12 +6,12 @@ export class Posts extends Component{
 
     render(){
         
-        const posts = this.props.posts.posts
-        const postsList = posts.map(post => <Post post={post} deletePost={this.props.deletePost}/>)
+        // const posts = this.props.posts.posts
+        // const postsList = posts.map(post => <Post post={post} deletePost={this.props.deletePost}/>)
         
         return(
             <ul id='post-list'>
-                {postsList}
+                {/* {postsList} */}
             </ul>
         )
     }

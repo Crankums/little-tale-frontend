@@ -12,7 +12,6 @@ export class PostsContainer extends Component{
                 Posts Container!
                 <br></br><br></br>
                 <Posts 
-                posts={this.props.posts}
                 deletePost={this.props.deletePost}/>
                 
             </div>

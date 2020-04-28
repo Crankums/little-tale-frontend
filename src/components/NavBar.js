@@ -10,7 +10,7 @@ const NavBar = ({ currentUser }) => {
         <div className="navbar">
             
             {currentUser ? <p><Logout /> </p>: <Login />}
-            {currentUser ? `${currentUser.data.attributes.username}, tell use a little tale!` : null}
+            {currentUser ? `${currentUser.attributes.username}, tell use a little tale!` : null}
         </div>
     )
 }

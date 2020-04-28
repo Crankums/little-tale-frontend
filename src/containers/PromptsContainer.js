@@ -28,7 +28,7 @@ export class PromptsContainer extends Component{
             <div className='prompts-container'> 
                 <div className='keywords'>{this.state.keywords.map(el => `"${el}" `)}</div>
                     <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
-                {/* <PostInput /> */}
+                <PostInput />
            
             </div>
         )

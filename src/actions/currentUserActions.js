@@ -1,4 +1,4 @@
-export const setCurrenUser = user => {
+export const setCurrentUser = user => {
     return {
         type: 'SET_CURRENT_USER',
         user
@@ -26,7 +26,7 @@ export const login = credentials => {
                 if (user.error){
                     alert(user.error)
                 } else {
-                    dispatch(setCurrenUser(user))
+                    dispatch(setCurrentUser(user))
                 }
             })
             .catch(console.log)
@@ -48,7 +48,7 @@ export const getCurrentUser = credentials => {
                 if (user.error){
                     alert(user.error)
                 } else {
-                    dispatch(setCurrenUser(user.data))
+                    dispatch(setCurrentUser(user.data))
                     console.log(`${user.data.attributes.username} is currently logged in`)
                 }
             })
