@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { addPost } from "../../actions/postActions";
+import { connect } from "react-redux";
 
 export class PostInput extends Component{
 
@@ -7,26 +9,33 @@ export class PostInput extends Component{
         title: ''
     }
 
-    handleOnChange(event){
+    handleOnChange= event => {
         const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
     }
 
-    handleOnSubmit(event) {
+    handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addPost(this.state.text)
+        const post = {
+            ...this.state
+        }
+        this.props.addPost(post)
         this.setState({
-            text: ''
+            text: '',
+            title: ''
         })
     }
 
     render(){
         return(
             <div className='post-input'>
-                <form id='post-input'>
+                <form id='post-input' onSubmit={this.handleOnSubmit}>
                     <br></br>
                     <textarea placeholder="inputs go here"
                     value = {this.state.text}
-                    onChange={(event)=> this.handleOnChange(event)}
+                    onChange={this.handleOnChange}
                     style={{
                         width: 400,
                         height: 200}}/>
@@ -38,4 +47,17 @@ export class PostInput extends Component{
     }
 }
 
-export default PostInput
+const mapStateToProps= state => {
+    const userId = state.currentUser ? state.currentUser.id : ""
+    return {
+        user: state.currentUser
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addPost: post => dispatch(addPost(post))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostInput)
