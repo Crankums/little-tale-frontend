@@ -8,6 +8,7 @@ import { fetchEquipment } from './actions/equipmentActions'
 import PostsContainer from './containers/PostsContainer';
 import Login from './components/Login'
 import { getCurrentUser } from './actions/currentUserActions';
+import Logout from './components/Logout';
 
 class App extends Component {
 
@@ -21,24 +22,25 @@ class App extends Component {
   
   render(){
     return (
-      <div >
-          <Login />
-          If logged in: Prompts Container<br></br><br></br>
-          <PromptsContainer />
+      <div>
+          <Login />  
+          <Logout />
           <br></br>
+          <PromptsContainer /> : <h2>log in to see prompts</h2>
           <PostsContainer />
       </div>
-    );
+    )
   }
 }
 
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
   return {
     monsters: state.monsters,
     persons: state.persons,
-    equipment: state.equipment
+    equipment: state.equipment,
+    currentUser: state.currentUser
   }
 }
 
-export default connect(mapDispatchToProps, { fetchMonsters, fetchPersons, fetchEquipment, getCurrentUser})(App);
+export default connect(mapStateToProps, { fetchMonsters, fetchPersons, fetchEquipment, getCurrentUser})(App);
