@@ -23,9 +23,7 @@ export class PostInput extends Component{
             ...this.state,
             title: this.props.keywords.join(', ')
         }
-        
         this.props.createPost(post, this.props.user)
-        
         this.setState({
             text: '',
             title: ''
