@@ -28,11 +28,13 @@ export const setAllPosts = posts => {
     }
 } 
 
-export const createPost = postData => {
+export const createPost = (postData, user) => {
+    
     return dispatch => {
         const sendablePostData = {
             title: postData.title,
-            text: postData.text
+            text: postData.text,
+            user_id: user.id
         }
         return fetch('http://localhost:3001/api/v1/posts', {
             credentials: 'include',

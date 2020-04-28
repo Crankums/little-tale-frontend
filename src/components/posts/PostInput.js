@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { addPost } from "../../actions/postActions";
+import { createPost } from "../../actions/postActions";
 import { connect } from "react-redux";
 
 export class PostInput extends Component{
@@ -20,9 +20,12 @@ export class PostInput extends Component{
     handleOnSubmit = event => {
         event.preventDefault()
         const post = {
-            ...this.state
+            ...this.state,
+            title: "title"
         }
-        this.props.addPost(post)
+        console.log(post)
+        this.props.createPost(post, this.props.user)
+        
         this.setState({
             text: '',
             title: ''
@@ -32,7 +35,6 @@ export class PostInput extends Component{
 
 
     render(){
-        console.log(this)
         return(
             <div className='post-input'>
                 <form id='post-input' onSubmit={this.handleOnSubmit}>
@@ -53,7 +55,6 @@ export class PostInput extends Component{
 }
 
 const mapStateToProps= state => {
-    const userId = state.currentUser ? state.currentUser.id : ""
     return {
         user: state.currentUser
     }
@@ -61,7 +62,7 @@ const mapStateToProps= state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPost: post => dispatch(addPost(post))
+        createPost: (postInputs, user) => dispatch(createPost(postInputs, user))
     }
 }
 
