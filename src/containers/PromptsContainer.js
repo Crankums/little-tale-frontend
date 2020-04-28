@@ -10,9 +10,7 @@ export class PromptsContainer extends Component{
     componentDidMount(){
         this.props.fetchMonsters()
         this.props.fetchPersons()
-        this.props.fetchEquipment()
-        // this.props.getCurrentUser()
-        
+        this.props.fetchEquipment()        
       }
 
     state={

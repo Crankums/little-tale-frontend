@@ -16,7 +16,7 @@ Lock replies*/
 
 export const addPosts = posts => {
     return {
-        type: 'ADD_POST',
+        type: 'ADD_POSTS',
         posts
     }
 }
@@ -49,7 +49,7 @@ export const createPost = (postData, user) => {
             if (res.error) {
                 alert(res.error)
             } else {
-                dispatch(addPosts(res.data))
+                dispatch({ type: 'SET_ALL_POSTS'})
 
             }
         

@@ -11,7 +11,6 @@ export class PostsContainer extends Component{
         this.props.fetchPosts()
     }
 
-
     render(){
         
         return(

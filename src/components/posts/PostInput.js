@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createPost } from "../../actions/postActions";
+import { createPost, fetchPosts } from "../../actions/postActions";
 import { connect } from "react-redux";
 
 export class PostInput extends Component{
@@ -24,7 +24,7 @@ export class PostInput extends Component{
             title: this.props.keywords.join(', ')
         }
         this.props.createPost(post, this.props.user)
-        
+        this.props.fetchPosts()
         this.setState({
             text: '',
             title: ''
@@ -62,7 +62,8 @@ const mapStateToProps= state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createPost: (postInputs, user) => dispatch(createPost(postInputs, user))
+        createPost: (postInputs, user) => dispatch(createPost(postInputs, user)),
+        fetchPosts: ()=> dispatch(fetchPosts())
     }
 }
 
