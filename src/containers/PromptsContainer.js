@@ -28,7 +28,7 @@ export class PromptsContainer extends Component{
             <div className='prompts-container'> 
                 <div className='keywords'>{this.state.keywords.map(el => `"${el}" `)}</div>
                     <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
-                <PostInput addPost={this.props.addPost}/>
+                {/* <PostInput /> */}
            
             </div>
         )
@@ -48,9 +48,5 @@ const mapStateToProps = state => {
     
 }
 
-const mapDispatchToProps = dispatch => ({
-    addPost: text => dispatch({type: 'ADD_POST', text})
-})
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(PromptsContainer)
+export default connect(mapStateToProps)(PromptsContainer)

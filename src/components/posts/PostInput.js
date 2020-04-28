@@ -3,13 +3,12 @@ import React, { Component } from "react";
 export class PostInput extends Component{
 
     state = {
-        text: ''
+        text: '',
+        title: ''
     }
 
     handleOnChange(event){
-        this.setState({
-            text: event.target.value
-        })
+        const {name, value} = event.target
     }
 
     handleOnSubmit(event) {
@@ -23,9 +22,9 @@ export class PostInput extends Component{
     render(){
         return(
             <div className='post-input'>
-                <form id='post-input' onSubmit = {(event) => this.handleOnSubmit(event)}>
+                <form id='post-input'>
                     <br></br>
-                    <textarea  placeholder="inputs go here"
+                    <textarea placeholder="inputs go here"
                     value = {this.state.text}
                     onChange={(event)=> this.handleOnChange(event)}
                     style={{

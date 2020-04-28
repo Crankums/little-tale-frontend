@@ -18,3 +18,21 @@ export const addPost = post => {
         post
     }
 }
+
+export const createPost = postData => {
+    return dispatch => {
+        const sendablePostData = {
+            title: postData.title,
+            text: postData.text
+        }
+        return fetch('http://localhost:3001/api/v1/posts', {
+            credentials: 'include',
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(sendablePostData)
+            }
+        )
+    }
+}
