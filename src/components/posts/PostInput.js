@@ -33,7 +33,6 @@ export class PostInput extends Component{
 
 
     render(){
-        console.log(this.props)
         return(
             <div className='post-input'>
                 <form id='post-input' onSubmit={this.handleOnSubmit}>

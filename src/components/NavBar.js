@@ -5,12 +5,10 @@ import Logout from './Logout';
 
 
 const NavBar = ({ currentUser }) => {
-    console.log(currentUser)
     return(
         <div className="navbar">
-            
             {currentUser ? <Logout /> : <Login />}
-            {currentUser ? `${currentUser.attributes.username}, tell use a little tale!` : null}
+            {currentUser ? ` ${currentUser.attributes.username}, tell us a little tale! ` : null}
         </div>
     )
 }
