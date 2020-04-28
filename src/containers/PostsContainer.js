@@ -12,12 +12,11 @@ export class PostsContainer extends Component{
     }
 
     render(){
-
         return(
             <div className = 'posts-container'>
                 Posts Container!
                 <br></br><br></br>
-                <Posts />
+                <Posts posts={this.props.posts}/>
                 
             </div>
             
@@ -27,7 +26,7 @@ export class PostsContainer extends Component{
     
 }
 
-const mapStateToProps = state => ({ posts: state.posts })
+const mapStateToProps = state => ({ posts: state.posts.posts })
 
 
 

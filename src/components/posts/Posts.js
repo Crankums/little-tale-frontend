@@ -5,13 +5,13 @@ export class Posts extends Component{
     
 
     render(){
-        
+        console.log(this.props.posts)
         // const posts = this.props.posts.posts
-        // const postsList = posts.map(post => <Post post={post} deletePost={this.props.deletePost}/>)
+        const postsList = this.props.posts.map(post => <Post key={post.id} post={post} deletePost={this.props.deletePost}/>)
         
         return(
             <ul id='post-list'>
-                {/* {postsList} */}
+                {postsList}
             </ul>
         )
     }

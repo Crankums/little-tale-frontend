@@ -25,6 +25,7 @@ export class PromptsContainer extends Component{
     // if you can't do an elegant solution, try an inelegant one  
 
     render(){
+        
         return(
             <div className='prompts-container'> 
                 <div 
