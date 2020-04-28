@@ -21,9 +21,9 @@ export class PostInput extends Component{
         event.preventDefault()
         const post = {
             ...this.state,
-            title: "title"
+            title: this.props.keywords.join(', ')
         }
-        console.log(post)
+        
         this.props.createPost(post, this.props.user)
         
         this.setState({
@@ -35,6 +35,7 @@ export class PostInput extends Component{
 
 
     render(){
+        console.log(this.props)
         return(
             <div className='post-input'>
                 <form id='post-input' onSubmit={this.handleOnSubmit}>

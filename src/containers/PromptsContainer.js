@@ -20,15 +20,20 @@ export class PromptsContainer extends Component{
         )
     }
 
+
+
     // if you can't do an elegant solution, try an inelegant one  
 
     render(){
-        // const monsters = this.props.monsters.map(mons => <li key={mons.id}>{mons.name}</li>)
         return(
             <div className='prompts-container'> 
-                <div className='keywords'>{this.state.keywords.map(el => `"${el}" `)}</div>
+                <div 
+                className='keywords'
+                >
+                {this.state.keywords.map(el => `"${el}" `)}
+                </div>
                     <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
-                <PostInput />
+                <PostInput keywords={this.state.keywords}/>
            
             </div>
         )
