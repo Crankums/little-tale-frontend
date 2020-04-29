@@ -16,8 +16,9 @@ export class Prompts extends Component{
         this.setState(
             {keywords: arr}
         )
-
     }
+
+
 
     render(){
         
@@ -25,8 +26,10 @@ export class Prompts extends Component{
             <div className='prompts-container'> 
                 <div className='keywords' >
                     {this.state.keywords.map(el => `"${el}" `)}
-                    <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
+                    
                 </div>
+                <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
+
             </div>
         )
     }

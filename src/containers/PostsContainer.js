@@ -7,7 +7,6 @@ import { fetchMonsters } from "../actions/monsterActions";
 import { fetchEquipment } from "../actions/equipmentActions";
 import { fetchPersons } from "../actions/personActions";
 import { Prompts } from "../components/Prompts";
-// import PostInput from "../components/posts/PostInput";
     
 export class PostsContainer extends Component{
 
@@ -19,27 +18,23 @@ export class PostsContainer extends Component{
     }
 
     render(){
-
         return(
             <div className = 'posts-container'>
                 <br></br><br></br>
                 <Prompts monsters={this.props.monsters} equipment={this.props.equipment} persons={this.props.persons} />
                 <PostInput />
                 <Posts posts={this.props.posts}/>
-                
             </div>
-            
         )
-        
     }
-    
 }
 
 const mapStateToProps = state => ({ 
     posts: state.posts.posts,
     monsters: state.monsters,
     equipment: state.equipment,
-    persons: state.persons})
+    persons: state.persons,
+    loading: state.loading})
 
 
 export default connect(mapStateToProps, { fetchPosts, fetchMonsters, fetchEquipment, fetchPersons })(PostsContainer)
