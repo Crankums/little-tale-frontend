@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-// import { connect } from 'react-redux'
-
 import { increaseIndex } from '../actions/promptActions'
-// import { fetchMonsters } from '../actions/monsterActions'
-// import { fetchPersons } from '../actions/personActions'
-// import { fetchEquipment } from '../actions/equipmentActions'
+
 export class Prompts extends Component{
     
     state={
@@ -38,4 +34,4 @@ export class Prompts extends Component{
 }
 
 
-export default (Prompts) 
+export default Prompts 
