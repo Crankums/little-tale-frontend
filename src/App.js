@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import PromptsContainer from './containers/PromptsContainer';
-
 import PostsContainer from './containers/PostsContainer';
 import { getCurrentUser } from './actions/currentUserActions';
 import NavBar from './components/NavBar';
@@ -21,7 +19,6 @@ class App extends Component {
     return (
         <div>
           <NavBar />
-          <PromptsContainer />
           <PostsContainer />
         <Switch>
           <Route exact path='/login' component={Login}/>
