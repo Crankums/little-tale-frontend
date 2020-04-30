@@ -3,15 +3,18 @@ import { createPost, fetchPosts } from "../../actions/postActions";
 import { connect } from "react-redux";
 
 export class PostInput extends Component{
+    
+    state={
+            text:'',
+            title:'',
+            keywords: this.props.keywords
+        }
+    
 
-
-    state = {
-        text: '',
-        title: ''
-    }
 
     handleOnChange= event => {
         const {name, value} = event.target
+        console.log(this.state,this.props)
         this.setState({
             [name]: value
         })
@@ -21,8 +24,11 @@ export class PostInput extends Component{
         event.preventDefault()
         const post = {
             ...this.state,
-            title: this.props.keywords.join(', ')
+            // title: this.props.keywords.join(', ')
+            title: 'title'
         }
+        console.log(this.state, this.props.user)
+        
         this.props.createPost(post, this.props.user)
         this.props.fetchPosts()
         this.setState({

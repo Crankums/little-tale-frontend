@@ -10,6 +10,10 @@ import { Prompts } from "../components/Prompts";
     
 export class PostsContainer extends Component{
 
+    state = {
+        keywords: []
+    }
+
     componentDidMount(){
         this.props.fetchPosts()
         this.props.fetchMonsters()
@@ -17,13 +21,27 @@ export class PostsContainer extends Component{
         this.props.fetchPersons()
     }
 
+    updateKeywords = (newKeywords)=> {
+        this.setState(
+            {keywords: newKeywords}    
+        )
+    }
+
     render(){
+        
         return(
             <div className = 'posts-container'>
                 <br></br><br></br>
-                <Prompts monsters={this.props.monsters} equipment={this.props.equipment} persons={this.props.persons} />
-                <PostInput />
-                <Posts posts={this.props.posts}/>
+                <Prompts 
+                    monsters={this.props.monsters} 
+                    equipment={this.props.equipment} 
+                    persons={this.props.persons}
+                    updateKeywords={this.props.updateKeywords} />
+                <PostInput 
+                    user={this.props.user}
+                    keywords={this.state.keywords}/>
+                <Posts 
+                    posts={this.props.posts}/>
             </div>
         )
     }
@@ -34,7 +52,9 @@ const mapStateToProps = state => ({
     monsters: state.monsters,
     equipment: state.equipment,
     persons: state.persons,
-    loading: state.loading})
+    loading: state.loading,
+    user: state.currentUser
+})
 
 
 export default connect(mapStateToProps, { fetchPosts, fetchMonsters, fetchEquipment, fetchPersons })(PostsContainer)

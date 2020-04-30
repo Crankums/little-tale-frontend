@@ -8,7 +8,7 @@ class CommentsContainer extends Component{
     render(){
         return(
             <div className='comments-container'>
-                Comments container!
+                
                 <CommentInput addComment={this.props.addComment}/>
                 <Comments 
                 comments={this.props.comments}

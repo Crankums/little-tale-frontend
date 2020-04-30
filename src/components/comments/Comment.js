@@ -6,7 +6,7 @@ class Comment extends Component{
 
         return(
             <div className='comment'>
-                <p>This is one comment</p>
+                
             </div>
         )
     }

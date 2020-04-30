@@ -18,13 +18,18 @@ export class Prompts extends Component{
         )
     }
 
-
+    setKeywords = newKeywords => {
+        this.props.updateKeywords(newKeywords)
+    }
 
     render(){
-        
+        console.log(this.props)
         return(
             <div className='prompts-container'> 
-                <div className='keywords' >
+                <div 
+                className='keywords' 
+                onChange={this.setKeywords}
+                >
                    <p> {this.state.keywords.map(el => `"${el}" `)}</p>
                 </div>
                 <button className='prompt-button' onClick={this.handleClick}>Prompt!</button>
