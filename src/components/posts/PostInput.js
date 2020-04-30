@@ -24,13 +24,12 @@ export class PostInput extends Component{
         event.preventDefault()
         const post = {
             ...this.state,
-            // title: this.props.keywords.join(', ')
-            title: 'title'
+            title: this.props.keywords.join(', ')
         }
-        console.log(this.state, this.props.user)
+        console.log(this.props)
         
         this.props.createPost(post, this.props.user)
-        this.props.fetchPosts()
+        // this.props.fetchPosts()
         this.setState({
             text: '',
             title: ''
@@ -66,11 +65,11 @@ const mapStateToProps= state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        createPost: (postInputs, user) => dispatch(createPost(postInputs, user)),
-        fetchPosts: ()=> dispatch(fetchPosts())
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return bindActionCreators({
+//         createPost: (postInputs, user) => dispatch(createPost(postInputs, user)),
+//         fetchPosts: ()=> dispatch(fetchPosts())
+//     }, dispatch)
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostInput)
+export default connect(mapStateToProps, { createPost })(PostInput)

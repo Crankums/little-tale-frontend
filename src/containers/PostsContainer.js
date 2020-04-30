@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import Posts from "../components/posts/Posts";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/postActions";
-import { PostInput } from "../components/posts/PostInput";
+import  PostInput  from "../components/posts/PostInput";
 import { fetchMonsters } from "../actions/monsterActions";
 import { fetchEquipment } from "../actions/equipmentActions";
 import { fetchPersons } from "../actions/personActions";
-import { Prompts } from "../components/Prompts";
+import Prompts from "../components/Prompts";
     
 export class PostsContainer extends Component{
 
@@ -21,7 +21,7 @@ export class PostsContainer extends Component{
         this.props.fetchPersons()
     }
 
-    updateKeywords = (newKeywords)=> {
+    updateKeywords = newKeywords => {
         this.setState(
             {keywords: newKeywords}    
         )
@@ -36,9 +36,9 @@ export class PostsContainer extends Component{
                     monsters={this.props.monsters} 
                     equipment={this.props.equipment} 
                     persons={this.props.persons}
-                    updateKeywords={this.props.updateKeywords} />
+                    updateKeywords={this.updateKeywords} />
                 <PostInput 
-                    user={this.props.user}
+                    // user={this.props.user}
                     keywords={this.state.keywords}/>
                 <Posts 
                     posts={this.props.posts}/>

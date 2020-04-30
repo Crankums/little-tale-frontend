@@ -16,6 +16,7 @@ export class Prompts extends Component{
         this.setState(
             {keywords: arr}
         )
+        this.setKeywords(arr)
     }
 
     setKeywords = newKeywords => {
@@ -28,7 +29,7 @@ export class Prompts extends Component{
             <div className='prompts-container'> 
                 <div 
                 className='keywords' 
-                onChange={this.setKeywords}
+                // onChange={this.setKeywords}
                 >
                    <p> {this.state.keywords.map(el => `"${el}" `)}</p>
                 </div>
