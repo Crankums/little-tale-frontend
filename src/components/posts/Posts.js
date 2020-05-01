@@ -7,7 +7,6 @@ export class Posts extends Component{
 
     render(){
         const postsList = this.props.posts ? this.props.posts.map(post => <Post key={post.id} post={post} deletePost={this.props.deletePost}/>) : null
-        
         return(
             <ul id='post-list'>
                 {postsList}

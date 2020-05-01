@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Posts from "../components/posts/Posts";
+import PostInput from "../components/posts/PostInput";
+import Prompts from "../components/Prompts";
+import LatestPosts from '../components/posts/LatestPosts'
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/postActions";
-import  PostInput  from "../components/posts/PostInput";
 import { fetchMonsters } from "../actions/monsterActions";
 import { fetchEquipment } from "../actions/equipmentActions";
 import { fetchPersons } from "../actions/personActions";
-import Prompts from "../components/Prompts";
     
 export class PostsContainer extends Component{
 
@@ -40,8 +41,10 @@ export class PostsContainer extends Component{
                 <PostInput 
                     // user={this.props.user}
                     keywords={this.state.keywords}/>
-                <Posts 
+                <LatestPosts 
                     posts={this.props.posts}/>
+                {/* <Posts 
+                    posts={this.props.posts}/> */}
             </div>
         )
     }
