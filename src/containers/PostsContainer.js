@@ -42,8 +42,8 @@ export class PostsContainer extends Component{
                     // user={this.props.user}
                     keywords={this.state.keywords}/>
                 <div className='post-links'>   
-                    <Link to='/posts/latest-posts'>Latest Posts</Link>
-                    <Link to='/posts/all-posts'>All Posts</Link>
+                    <Link to='/posts/latest-posts'><button> Latest Posts </button></Link>
+                    <Link to='/posts/all-posts'><button> All Posts </button></Link>
                 </div>
                 <Switch>
                     <Route path={`/posts/latest-posts`} render={(routerProps) => <LatestPosts {...routerProps} posts={this.props.posts}/>}/>
