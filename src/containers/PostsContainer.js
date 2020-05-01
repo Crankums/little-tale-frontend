@@ -8,6 +8,7 @@ import { fetchPosts } from "../actions/postActions";
 import { fetchMonsters } from "../actions/monsterActions";
 import { fetchEquipment } from "../actions/equipmentActions";
 import { fetchPersons } from "../actions/personActions";
+import { Switch, Route, Link } from "react-router-dom";
     
 export class PostsContainer extends Component{
 
@@ -29,7 +30,6 @@ export class PostsContainer extends Component{
     }
 
     render(){
-        
         return(
             <div className = 'posts-container'>
                 <br></br><br></br>
@@ -41,10 +41,14 @@ export class PostsContainer extends Component{
                 <PostInput 
                     // user={this.props.user}
                     keywords={this.state.keywords}/>
-                <LatestPosts 
-                    posts={this.props.posts}/>
-                {/* <Posts 
-                    posts={this.props.posts}/> */}
+                <div className='post-links'>   
+                    <Link to='/posts/latest-posts'>Latest Posts</Link>
+                    <Link to='/posts/all-posts'>All Posts</Link>
+                </div>
+                <Switch>
+                    <Route path={`/posts/latest-posts`} render={(routerProps) => <LatestPosts {...routerProps} posts={this.props.posts}/>}/>
+                    <Route path={'/posts/all-posts'} render={(routerProps) => <Posts {...routerProps} posts={this.props.posts}/>}/>
+                </Switch>    
             </div>
         )
     }
