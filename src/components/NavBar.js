@@ -12,6 +12,7 @@ const NavBar = ({ currentUser }) => {
             {currentUser ? ` ${currentUser.attributes.username}, tell us a little tale! ` : null}
             <Link to='/'> Home </Link>
             <Link to='/about'>About</Link>
+            <Link to='/posts'>Posts and Prompts!</Link>
         </div>
     )
 }
