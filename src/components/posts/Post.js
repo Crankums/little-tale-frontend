@@ -8,6 +8,7 @@ class Post extends Component{
     }
 
     render(){
+        console.log(this.props)
         const { post } = this.props
         return(
                 <div className='post'>

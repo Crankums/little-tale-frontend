@@ -14,7 +14,6 @@ export class PostInput extends Component{
 
     handleOnChange= event => {
         const {name, value} = event.target
-        console.log(this.state,this.props)
         this.setState({
             [name]: value
         })
@@ -26,10 +25,9 @@ export class PostInput extends Component{
             ...this.state,
             title: this.props.keywords.join(', ')
         }
-        console.log(this.props)
         
         this.props.createPost(post, this.props.user)
-        // this.props.fetchPosts()
+        this.props.fetchPosts()
         this.setState({
             text: '',
             title: ''
@@ -72,4 +70,4 @@ const mapStateToProps= state => {
 //     }, dispatch)
 // }
 
-export default connect(mapStateToProps, { createPost })(PostInput)
+export default connect(mapStateToProps, { createPost, fetchPosts })(PostInput)

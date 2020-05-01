@@ -21,12 +21,12 @@ export const addPosts = posts => {
     }
 }
 
-// export const setAllPosts = () => {
-    
-//     return {
-//         type: "SET_ALL_POSTS"
-//     }
-// } 
+export const deletePost = postId => {
+    return {
+        type: "DELETE_POST",
+        postId
+    }
+}
 
 export const createPost = (postData, user) => {
     
@@ -49,7 +49,7 @@ export const createPost = (postData, user) => {
             if (res.error) {
                 alert(res.error)
             } else {
-                dispatch({ type: 'SET_ALL_POSTS'})
+                dispatch(addPosts(res))
 
             }
         
@@ -79,5 +79,21 @@ export const fetchPosts = () => {
             }
         })
         .catch(console.log)
+    }
+}
+
+export const deletePosts = postId => {
+
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/posts/${postId}`, {
+            credentials: "include",
+            method: "DELETE",
+            headers: {
+                'Content-Type': "application/json"
+            }
+        })
+        .then(()=> {
+            dispatch(deletePost(postId))
+        })
     }
 }
