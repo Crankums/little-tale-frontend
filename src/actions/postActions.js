@@ -44,17 +44,6 @@ export const createPost = (postData, user) => {
             },
             body: JSON.stringify(sendablePostData)
         })
-        .then(res=>res.json())
-        .then(res => {
-            if (res.error) {
-                alert(res.error)
-            } else {
-                dispatch(addPosts(res))
-
-            }
-        
-        })
-        .then(()=>fetchPosts())
         .catch(console.log)
     }
 }

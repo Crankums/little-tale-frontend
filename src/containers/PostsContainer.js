@@ -30,6 +30,7 @@ export class PostsContainer extends Component{
     }
 
     render(){
+        console.log(this.props)
         return(
             <div className = 'posts-container'>
                 <br></br><br></br>
@@ -40,7 +41,8 @@ export class PostsContainer extends Component{
                     updateKeywords={this.updateKeywords} />
                 <PostInput 
                     // user={this.props.user}
-                    keywords={this.state.keywords}/>
+                    keywords={this.state.keywords}
+                    />
                 <div className='post-links'>   
                     <Link to='/posts/latest-posts'><button> Latest Posts </button></Link>
                     <Link to='/posts/all-posts'><button> All Posts </button></Link>

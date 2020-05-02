@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import About from './components/AboutPage'
+// import { Posts } from './components/posts/Posts';
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
         <Switch>
           <Route path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
           <Route path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-          <Route path='/posts'> {loggedIn ? <PostsContainer /> : <Redirect to='/'/>}</Route>
+          <Route path='/posts'> {loggedIn ? <PostsContainer posts={this.props.posts}/> : <Redirect to='/'/>}</Route>
           <Route path='/about'>{loggedIn ? <About />: <Redirect to="/"/>  }</Route>
           <Route /> {/* <--show all posts */}
         </Switch>
@@ -36,7 +37,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    posts: state.posts 
   }
 }
 
