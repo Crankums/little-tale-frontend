@@ -5,9 +5,6 @@ import { fetchPosts } from '../../actions/postActions'
 
 class Post extends Component{
 
-    componentDidUpdate(){
-        this.props.fetchPosts()
-    }
 
     handleOnClick(){
         this.props.deletePost(this.props.post.id)

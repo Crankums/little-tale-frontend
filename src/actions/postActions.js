@@ -86,3 +86,24 @@ export const deletePosts = postId => {
         })
     }
 }
+
+
+export const updatePosts = post => {
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/posts/${post.id}/edit`,{
+            credentials: "include",
+            method: "PATCH",
+            headers: {
+                'Content-Type': "application/json"
+            }
+        })
+        .then(res => {
+            if (res.error) {
+                alert(res.error)
+            } else {
+                dispatch({ type: 'UPDATE_POST', post: res})
+            }
+        })
+        .catch(console.log)
+    }
+}
