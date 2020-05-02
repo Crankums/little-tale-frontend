@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import CommentsContainer from '../../containers/CommentsContainer'
+import { connect } from 'react-redux'
+import { fetchPosts } from '../../actions/postActions'
 
 class Post extends Component{
 
+    componentDidUpdate(){
+        this.props.fetchPosts()
+    }
+
     handleOnClick(){
         this.props.deletePost(this.props.post.id)
+        console.log(this.props.post.id, " has been deleted.")
     }
 
     render(){
@@ -21,4 +28,4 @@ class Post extends Component{
     }
 }
 
-export default Post
+export default connect(null, {fetchPosts})(Post)

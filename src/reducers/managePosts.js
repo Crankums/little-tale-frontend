@@ -23,7 +23,6 @@ export default function managePosts(state= {
             return action.posts
 
         case 'DELETE_POST':
-            
             return state.posts.filter( post => post.id === action.postId ? false : true)
         
         case "CLEAR_POSTS":
