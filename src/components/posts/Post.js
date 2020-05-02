@@ -24,7 +24,7 @@ class Post extends Component{
                     <h4>{post.title}</h4>
                     <p>{post.text}</p>
                     <button id='delete-button' onClick={()=>this.handleDelete()}>Delete Post!</button>
-                    
+                    <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
                     {/* <CommentsContainer post={post}/> */}
                 </div>
         )
