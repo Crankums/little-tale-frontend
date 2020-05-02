@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CommentsContainer from '../../containers/CommentsContainer'
+// import CommentsContainer from '../../containers/CommentsContainer'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../../actions/postActions'
 
@@ -19,7 +19,7 @@ class Post extends Component{
                     <p>{post.title}</p>
                     {post.text}
                     <button id='delete-button' onClick={()=>this.handleOnClick()}>Delete Post!</button>
-                    <CommentsContainer post={post}/>
+                    {/* <CommentsContainer post={post}/> */}
                 </div>
         )
     }
