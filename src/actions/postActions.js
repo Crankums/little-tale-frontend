@@ -1,16 +1,16 @@
 /*
-Create Post
+x -Create Post
     -fetch POST request - are routes for this written yet?
-Delete Post
+x -Delete Post
     -fetch DELETE request
-Upvote Post
+doing edit for now, will change to voting in the future {Upvote Post
 Downvote Post
 React to Post
-    -fetch UPDATE(PUT) request
+}    -fetch UPDATE(PUT) request
     
-Admin:
+not in scope for current project {Admin:
 Update posts
-Lock replies*/
+Lock replies}*/
 
 
 
