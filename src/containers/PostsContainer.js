@@ -4,7 +4,7 @@ import PostInput from "../components/posts/PostInput";
 import Prompts from "../components/Prompts";
 import LatestPosts from '../components/posts/LatestPosts'
 import { connect } from "react-redux";
-import { fetchPosts } from "../actions/postActions";
+import { fetchPosts, updatePosts } from "../actions/postActions";
 import { fetchMonsters } from "../actions/monsterActions";
 import { fetchEquipment } from "../actions/equipmentActions";
 import { fetchPersons } from "../actions/personActions";
@@ -61,9 +61,8 @@ const mapStateToProps = state => ({
     monsters: state.monsters,
     equipment: state.equipment,
     persons: state.persons,
-    loading: state.loading,
     user: state.currentUser
 })
 
 
-export default connect(mapStateToProps, { fetchPosts, fetchMonsters, fetchEquipment, fetchPersons })(PostsContainer)
+export default connect(mapStateToProps, { fetchPosts, fetchMonsters, fetchEquipment, fetchPersons, updatePosts })(PostsContainer)
