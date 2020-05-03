@@ -31,8 +31,8 @@ class EditPost extends Component{
         const post = {
             ...this.state
         }
-        // console.log(post)
-        this.props.updatePosts(post)
+        console.log(post, this.props)
+        this.props.updatePosts(post, this.props.history)
     }
     
     

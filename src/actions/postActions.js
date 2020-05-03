@@ -88,12 +88,12 @@ export const deletePosts = postId => {
 }
 
 
-export const updatePosts = post => {
+export const updatePosts = (post, history) => {
     return dispatch => {
         const sendablePostData = {
             id: post.id,
-            title: post.text,
-            text: post.title
+            title: post.title,
+            text: post.text
         }
         return fetch(`http://localhost:3001/api/v1/posts/${post.id}`,{
             credentials: "include",
@@ -109,6 +109,7 @@ export const updatePosts = post => {
                 alert(res.error)
             } else {
                 dispatch({ type: 'UPDATE_POST', post: res})
+                history.push('/posts/latest-posts')
             }
         })
         .catch(console.log)

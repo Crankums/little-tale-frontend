@@ -26,8 +26,9 @@ export default function managePosts(state= {
             return state.posts.filter( post => post.id === action.postId ? false : true)
 
         case 'UPDATE_POST':
-            return state.map(post => post.id === action.post.id ? action.post : post)
-            
+            debugger
+            return state.posts.map(post => post.id === action.post.id ? action.post : post)
+
         case "CLEAR_POSTS":
             return {
                 posts: []
