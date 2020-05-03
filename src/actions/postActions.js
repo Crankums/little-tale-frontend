@@ -92,7 +92,7 @@ export const updatePosts = post => {
     return dispatch => {
         const sendablePostData = {
             id: post.id,
-            title: post.title,
+            title: post.text,
             text: post.title
         }
         return fetch(`http://localhost:3001/api/v1/posts/${post.id}`,{
