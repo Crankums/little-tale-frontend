@@ -3,32 +3,52 @@ import { connect } from 'react-redux'
 import { updatePosts } from '../../actions/postActions'
 
 class EditPost extends Component{
-    
+    constructor(props){
+        super(props)
+        const post = this.props.posts.find(post => post.id === this.props.location.postId)
+        this.state= {
+            id: post.id,
+            title: post.title,
+            text: post.text,
+        }
+    }
 
-    handleOnChange = () => {
-        console.log()
+
+
+
+
+    handleOnChange= event => {
+        
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
+        console.log(this.state)
     }
 
     handleOnSubmit = event => {
         event.preventDefault()
-        console.log("Submitted")
+        const post = {
+            ...this.state
+        }
+        // console.log(post)
+        this.props.updatePosts(post)
     }
     
     
     render(){
-        const post = this.props.posts.find(post => post.id === this.props.location.postId)
-        console.log(post)
+        
         return(
             <div className='edit-form'>
                 <form onSubmit={event => this.handleOnSubmit(event)}>
                     <textarea 
                         name='text'
-                        value={post.text}
+                        value={this.state.text}
                         onChange={this.handleOnChange}
                         style={{
-                            width: 400,
-                            height: 200}}/>
-                    <input type='submit'/>Submit            
+                            width: 350,
+                            height: 150}}/>
+                    <input type='submit'/>           
                 </form>
             </div>
         )

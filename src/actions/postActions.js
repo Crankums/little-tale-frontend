@@ -90,13 +90,20 @@ export const deletePosts = postId => {
 
 export const updatePosts = post => {
     return dispatch => {
-        return fetch(`http://localhost:3001/api/v1/posts/${post.id}/edit`,{
+        const sendablePostData = {
+            id: post.id,
+            title: post.title,
+            text: post.title
+        }
+        return fetch(`http://localhost:3001/api/v1/posts/${post.id}`,{
             credentials: "include",
             method: "PATCH",
             headers: {
                 'Content-Type': "application/json"
-            }
+            },
+            body: JSON.stringify(sendablePostData)
         })
+        .then(res => res.json())
         .then(res => {
             if (res.error) {
                 alert(res.error)
