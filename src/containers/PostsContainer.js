@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Posts from "../components/posts/Posts";
-import PostInput from "../components/posts/PostInput";
 import Prompts from "../components/Prompts";
+import PostInput from "../components/posts/PostInput";
+import Posts from "../components/posts/Posts";
 import LatestPosts from '../components/posts/LatestPosts'
+import EditPost from "../components/posts/EditPost";
 import { connect } from "react-redux";
 import { fetchPosts, updatePosts } from "../actions/postActions";
 import { fetchMonsters } from "../actions/monsterActions";
@@ -50,6 +51,7 @@ export class PostsContainer extends Component{
                 <Switch>
                     <Route path={`/posts/latest-posts`} render={(routerProps) => <LatestPosts {...routerProps} posts={this.props.posts}/>}/>
                     <Route path={'/posts/all-posts'} render={(routerProps) => <Posts {...routerProps} posts={this.props.posts}/>}/>
+                    <Route path={'/posts/:id/edit'} render={(routerProps)=> <EditPost {...routerProps} posts={this.props.posts} updatePosts={this.props.updatePosts}/>}/>
                 </Switch>    
             </div>
         )

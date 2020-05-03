@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import CommentsContainer from '../../containers/CommentsContainer'
 import { connect } from 'react-redux'
 import { fetchPosts, updatePosts } from '../../actions/postActions'
+
 import { Link } from 'react-router-dom'
 
 class Post extends Component{
@@ -18,13 +19,16 @@ class Post extends Component{
     }
 
     render(){
+        console.log(this.state)
         const { post } = this.props
         return(
+                
                 <div className='post'>
                     <h4>{post.title}</h4>
                     <p>{post.text}</p>
                     <button id='delete-button' onClick={()=>this.handleDelete()}>Delete Post!</button>
-                    <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
+                    <Link to={{pathname: `/posts/${post.id}/edit`, postId: post.id}}><button>Edit Post</button></Link>
+                    
                     {/* <CommentsContainer post={post}/> */}
                 </div>
         )
