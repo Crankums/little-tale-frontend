@@ -14,7 +14,6 @@ class Post extends Component{
     render(){
         const { post } = this.props
         return(
-                
                 <div className='post'>
                     <h4>{post.title}</h4>
                     <p>{post.text}</p>

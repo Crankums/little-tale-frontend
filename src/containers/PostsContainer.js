@@ -30,6 +30,19 @@ export class PostsContainer extends Component{
         )
     }
 
+    updateSort = value => {
+        let sortedPosts = this.props.posts.slice()
+        if (value === 'sortZa'){
+            sortedPosts.sort((a, b) => b.id - a.id)
+        }  else if (value === 'sortAz'){
+            sortedPosts.sort((a,b) => a.id- b.id)
+            
+        }
+        this.setState({
+            sortedPosts
+        })
+    }
+
     render(){
         console.log(this.props)
         return(
@@ -50,7 +63,7 @@ export class PostsContainer extends Component{
                 </div>
                 <Switch>
                     <Route path={`/posts/latest-posts`} render={(routerProps) => <LatestPosts {...routerProps} posts={this.props.posts}/>}/>
-                    <Route path={'/posts/all-posts'} render={(routerProps) => <Posts {...routerProps} posts={this.props.posts}/>}/>
+                    <Route path={'/posts/all-posts'} render={(routerProps) => <Posts {...routerProps} posts={this.state.sortedPosts || this.props.posts} updateSort={this.updateSort}/>}/>
                     <Route path={'/posts/:id/edit'} render={(routerProps)=> <EditPost {...routerProps} posts={this.props.posts} updatePosts={this.props.updatePosts}/>}/>
                     {/* routerprops.match.params.id */}
                 </Switch>    
