@@ -22,7 +22,7 @@ class App extends Component {
     return (
         <div className="app-container">
           <NavBar />
-          
+          {/* check loggedIn status before rendering switch */}
         <Switch>
           <Route path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
           <Route path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>

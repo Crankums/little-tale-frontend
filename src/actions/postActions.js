@@ -29,8 +29,9 @@ export const deletePost = postId => {
 }
 
 export const createPost = (postData, user) => {
-    
+    console.log('b')
     return dispatch => {
+        console.log('c')
         const sendablePostData = {
             title: postData.title,
             text: postData.text,
@@ -44,8 +45,15 @@ export const createPost = (postData, user) => {
             },
             body: JSON.stringify(sendablePostData)
         })
-        .catch(console.log)
+            .then(res => res.json())
+            .then(post =>{
+                console.log('d')
+                // later we'd dispatch an action here to add the post to the posts piece of redux state
+            })
+            .catch(console.log)
+        console.log('e')
     }
+    console.log('f')
 }
 
 export const fetchPosts = () => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import CommentsContainer from '../../containers/CommentsContainer'
+import CommentsContainer from '../../containers/CommentsContainer'
 import { connect } from 'react-redux'
 import { fetchPosts, updatePosts } from '../../actions/postActions'
 import { Link } from 'react-router-dom'
@@ -21,7 +21,7 @@ class Post extends Component{
                     <button id='delete-button' onClick={()=>this.handleDelete()}>Delete Post!</button>
                     <Link to={{pathname: `/posts/${post.id}/edit`, postId: post.id}}><button>Edit Post</button></Link>
                     
-                    {/* <CommentsContainer post={post}/> */}
+                    <CommentsContainer post={post}/>
                 </div>
         )
     }

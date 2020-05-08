@@ -52,6 +52,7 @@ export class PostsContainer extends Component{
                     <Route path={`/posts/latest-posts`} render={(routerProps) => <LatestPosts {...routerProps} posts={this.props.posts}/>}/>
                     <Route path={'/posts/all-posts'} render={(routerProps) => <Posts {...routerProps} posts={this.props.posts}/>}/>
                     <Route path={'/posts/:id/edit'} render={(routerProps)=> <EditPost {...routerProps} posts={this.props.posts} updatePosts={this.props.updatePosts}/>}/>
+                    {/* routerprops.match.params.id */}
                 </Switch>    
             </div>
         )
