@@ -8,7 +8,7 @@ class Post extends Component{
 
     handleDelete(){
         this.props.deletePost(this.props.post.id)
-        console.log(this.props.post.id, " has been deleted.")
+        console.log(this.props.post.title, " has been deleted.")
     }   
 
     render(){

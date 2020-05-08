@@ -22,18 +22,14 @@ export default function managePosts(state= {
 
         // create new post case to be added
 
-        // case 'ADD_POST':
-        //     const post = {
-        //         title: action.title,
-        //         text: action.text,
-        //         id: action.id
-        //     }
-        //     return{
-        //         ...state,
-        //         posts: [state.posts, post]
-        //     }
-        case 'SET_ALL_POSTS':
-            return action.posts
+        case 'ADD_POST':
+            return{
+                ...state,
+                posts: [...state.posts, action.post]
+            }
+
+        // case 'SET_ALL_POSTS':
+        //     return action.posts
 
         case 'DELETE_POST':
             return {
